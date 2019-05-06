@@ -8,7 +8,6 @@ Original file is located at
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
 import tensorflow as tf
 
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
@@ -34,35 +33,6 @@ print("Number of testing examples =", n_test)
 print("Image data shape =", image_shape)
 print("Number of classes =", n_classes)
 print(type(x_train[0]))
-
-'''
-import matplotlib.pyplot as plt
-import numpy as np
-import random
-
-#make a grid
-fig, ax= plt.subplots(nrows=3, ncols=3)
-fig.tight_layout()
-flat = [axis for row in ax for axis in row]
-
-#hide the messy ticks 
-for axis in flat:
-    axis.set_xticks([])
-    axis.set_yticks([])
-    axis.tick1On = axis.tick2On = False
-    axis.label1On = axis.label2On = False
-
-#include the image and the label
-for i in range(3):
-    for j in range(3):
-        index = random.randint(0,len(x_train))
-        img = x_train[index]
-        class_id = y_train[index]
-        ax[i][j].set_xlabel(class_id)
-        ax[i][j].imshow(img)
-
-plt.show()
-'''
 
 def normalize(img):
     img_array = np.asarray(img)
